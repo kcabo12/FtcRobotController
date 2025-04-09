@@ -77,6 +77,7 @@ public class Autonomous_IntoTheDeep extends LinearOpMode {
     public Servo pixelLoaderRight = null;
     public NormalizedColorSensor floorSensor = null;
 
+
     ColorSensor colorSensor;    // Hardware Device Object
 //    ColorSensor floorSensor;    // Hardware Device Object
 
