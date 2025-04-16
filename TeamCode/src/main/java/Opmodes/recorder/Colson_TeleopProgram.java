@@ -36,6 +36,11 @@ import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
+/* I imported Range as well, I'm not sure if there is a different way to do this, but in both the tutorials I watched
+   they used "Range.clip" to set the power of the motors with the left joystick input. - Colson
+ */
+import com.qualcomm.robotcore.util.Range;
+
 
 import org.firstinspires.ftc.robotcore.external.hardware.camera.CameraName;
 
@@ -81,14 +86,22 @@ Good luck!!
 @TeleOp(name="Colson_TeleopProgram", group="Robot")
 public class Colson_TeleopProgram extends LinearOpMode {
 
+
     // Initialization:
     // NOTE: In the Example Formats, do not include the brackets [] with your input
+
 
     // ======================= MOTORS =======================
     // Example format:
     // public [motor type] [insert name of motor] = [insert power/position];
 
     // Your input:
+    DcMotor leftFront, leftBack;
+    DcMotor rightFront, rightBack;
+
+    DcMotor liftMotor;
+
+
 
 
     // ======================= SERVOS =======================
@@ -96,9 +109,7 @@ public class Colson_TeleopProgram extends LinearOpMode {
     // public [servo type] [insert name of servo] = [insert power/position];
 
     // Your input:
-
-
-
+    Servo claw;
 
     @Override
     public void runOpMode() {
@@ -106,8 +117,21 @@ public class Colson_TeleopProgram extends LinearOpMode {
         // Define and Initialize Motors
         // Example format:
         // [name of motor] = hardwareMap.get([motor type].class, "[name of motor]");
-
+        double liftMotorPower = 0;
         // Your input:
+        leftFront = hardwareMap.get(DcMotor.class, "leftFront");
+        leftBack = hardwareMap.get(DcMotor.class, "leftBack");
+        rightFront = hardwareMap.get(DcMotor.class, "rightFront");
+        rightBack = hardwareMap.get(DcMotor.class, "rightBack");
+        liftMotor = hardwareMap.get(DcMotor.class, "liftMotor");
+
+        leftFront.setDirection(DcMotor.Direction.FORWARD);
+        leftBack.setDirection(DcMotor.Direction.FORWARD);
+        rightFront.setDirection(DcMotor.Direction.REVERSE);
+        rightBack.setDirection(DcMotor.Direction.REVERSE);
+
+
+
 
 
         // Define and Initialize Servos
@@ -115,7 +139,14 @@ public class Colson_TeleopProgram extends LinearOpMode {
         // [name of servo] = hardwareMap.get([servo type].class, "[name of servo]");
 
         // Your input:
+        claw = hardwareMap.get(Servo.class, "claw");
 
+
+        telemetry.addLine("__ Qualifier - Teleop Code Initialized");
+        telemetry.addData(">", "Robot Ready. Press Play.");
+        telemetry.update();
+
+        waitForStart();
 
 
 
@@ -123,8 +154,37 @@ public class Colson_TeleopProgram extends LinearOpMode {
             // Set power to motors:
             // Example Format:
             // [name of motor].setpower([insert value here]);
+            leftFront.setPower(Range.clip(gamepad1.left_stick_y, -.8, .8));
+            leftBack.setPower(Range.clip(gamepad1.left_stick_y, -.8, .8));
+            rightFront.setPower(Range.clip(gamepad1.right_stick_y, -.8, .8));
+            rightBack.setPower(Range.clip(gamepad1.right_stick_y, -.8, .8));
+
+            liftMotorPower = 0;
+            if (gamepad2.right_stick_y < -0.03) {
+                telemetry.addData("right_stick_y < -0.03", "");
+                liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+                liftMotorPower = 0.5;
+            }
+            else if (gamepad2.right_stick_y > 0.03) {
+                telemetry.addData("right_stick_y > 0.03", "");
+                liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+                liftMotorPower = 0.4;
+            }
+            else if (gamepad2.left_stick_y < -0.03) {
+                telemetry.addData("left_stick_y < -0.03", "");
+                liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+                liftMotorPower = 1;
+            }
+            else if (gamepad2.left_stick_y > 0.03) {
+                telemetry.addData("left_stick_y > 0.03", "");
+                liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+                liftMotorPower = -1;
+            }
+            liftMotor.setPower(liftMotorPower);
+
 
             // Your input:
+
 
 
 
@@ -142,6 +202,12 @@ public class Colson_TeleopProgram extends LinearOpMode {
             */
 
             // Your input:
+            if (gamepad1.a) {
+                claw.setPosition(1);
+            }
+            else if (gamepad1.b) {
+                claw.setPosition(.65);
+            }
 
 
 
