@@ -36,6 +36,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DigitalChannel;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -64,10 +65,10 @@ public class Teleop_IntoTheDeep extends LinearOpMode {
 
     /* Declare OpMode members. */
     // ======================= MOTORS =======================
-    public DcMotor leftFront   = null;
-    public DcMotor leftBack   = null;
-    public DcMotor  rightFront  = null;
-    public DcMotor  rightBack  = null;
+    public DcMotorEx leftFront   = null;
+    public DcMotorEx leftBack   = null;
+    public DcMotorEx  rightFront  = null;
+    public DcMotorEx  rightBack  = null;
     public DcMotor liftMotor = null;
     public DcMotor extensionMotor = null;
 //    public DcMotor odometryX = null;
@@ -125,10 +126,10 @@ public class Teleop_IntoTheDeep extends LinearOpMode {
 //        int colorSensorState = 0, pixels = 0;
 
         // Define and Initialize Motors
-        leftFront  = hardwareMap.get(DcMotor.class, "leftFront");
-        rightBack = hardwareMap.get(DcMotor.class, "rightBack");
-        rightFront = hardwareMap.get(DcMotor.class, "rightFront");
-        leftBack    = hardwareMap.get(DcMotor.class, "leftBack");
+        leftFront  = hardwareMap.get(DcMotorEx.class, "leftFront");
+        rightBack = hardwareMap.get(DcMotorEx.class, "rightRear");
+        rightFront = hardwareMap.get(DcMotorEx.class, "rightFront");
+        leftBack    = hardwareMap.get(DcMotorEx.class, "leftRear");
         liftMotor = hardwareMap.get(DcMotor.class, "liftMotor");
         ascentMotor1 = hardwareMap.get(DcMotor.class, "ascentMotor1");
         ascentMotor2 = hardwareMap.get(DcMotor.class, "ascentMotor2");
@@ -652,8 +653,8 @@ public class Teleop_IntoTheDeep extends LinearOpMode {
             telemetry.addData("currentTime", currentTime.milliseconds());
 //            // ======================= MOTORS =======================
             telemetry.addData("leftFront: ", leftFront.getCurrentPosition());
-            telemetry.addData("leftBack: ", leftBack.getCurrentPosition());
-            telemetry.addData("rightBack: ", rightBack.getCurrentPosition());
+            telemetry.addData("leftRear: ", leftBack.getCurrentPosition());
+            telemetry.addData("rightRear: ", rightBack.getCurrentPosition());
             telemetry.addData("rightFront: ", rightFront.getCurrentPosition());
             telemetry.addData("v1", v1);
             telemetry.addData("v2", v2);
