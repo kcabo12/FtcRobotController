@@ -182,8 +182,13 @@ public class Colson_TeleopProgram extends LinearOpMode {
             }
             liftMotor.setPower(liftMotorPower);
 
+            int liftDistance = 0; //Set as distance to get to the second basket.
 
-            // Your input:
+            liftMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+
+            liftMotor.setTargetPosition(liftDistance);
+
+            liftMotor.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
 
 
