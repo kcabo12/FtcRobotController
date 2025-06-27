@@ -113,6 +113,7 @@ public class Teleop_IntoTheDeep extends LinearOpMode {
         double left;
         double right;
         double drive;
+        
         double turn;
         double max;
         double liftMotorPower = 0;
