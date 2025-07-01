@@ -2,14 +2,11 @@ package Opmodes.recorder;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Servo;
-import com.qualcomm.robotcore.util.Range;
 
-// TODO: [insert date] [insert_name], please read the following message:
+// TODO: 7/1/2025 Isaac, please read the following message:
 /*
 
-Hello [insert_name]!
+Hello Isaac!
 
 Welcome to your personal TeleOp program! I know you are eager to get into the actual programming, so I will do my best to guide you through it.
 
@@ -46,7 +43,7 @@ Good luck!!
  */
 
 @TeleOp(name="Tutorial_TeleopProgram", group="Robot")
-public class Tutorial_TeleopProgram extends LinearOpMode {
+public class Isaac_TeleopProgram extends LinearOpMode {
 
 
     // Initialization:
