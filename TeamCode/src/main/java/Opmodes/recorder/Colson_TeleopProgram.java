@@ -29,6 +29,7 @@
 
 package Opmodes.recorder;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -82,7 +83,7 @@ Good luck!!
 - Andrew :)
 
  */
-
+@Disabled
 @TeleOp(name="Colson_TeleopProgram", group="Robot")
 public class Colson_TeleopProgram extends LinearOpMode {
 

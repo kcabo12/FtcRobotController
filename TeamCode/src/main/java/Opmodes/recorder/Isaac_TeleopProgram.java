@@ -1,7 +1,9 @@
 package Opmodes.recorder;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.DcMotor;
 
 // TODO: 7/1/2025 Isaac, please read the following message:
 /*
@@ -41,7 +43,7 @@ Good luck!!
 - Andrew :)
 
  */
-
+@Disabled
 @TeleOp(name="Tutorial_TeleopProgram", group="Robot")
 public class Isaac_TeleopProgram extends LinearOpMode {
 
@@ -76,9 +78,8 @@ public class Isaac_TeleopProgram extends LinearOpMode {
         // Your input:
 
 
-
-
-
+//        DcMotor rightfront DcMotor leftfront;
+//        DcMotor rightback DcMotor leftback;
 
 
 

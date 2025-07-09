@@ -31,6 +31,7 @@ package Opmodes;
 
 import com.qualcomm.hardware.modernrobotics.ModernRoboticsI2cColorSensor;
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.ColorSensor;
@@ -56,6 +57,7 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 // We are waiting on encoder cables to arrive so that we may configure the encoder wheels, until then we can't do anything. -Mason 10/8/2024
 //@Autonomous(name="Autonomous_IntoTheDeep", group="Robot")
 //@Disabled
+@Disabled
 public class Autonomous_IntoTheDeep extends LinearOpMode {
     // get an instance of the "Robot" class.
     private org.firstinspires.ftc.teamcode.SimplifiedOdometryRobot robot = new org.firstinspires.ftc.teamcode.SimplifiedOdometryRobot(this);

@@ -1,6 +1,7 @@
 package Opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
@@ -12,6 +13,7 @@ import org.json.JSONObject;
 
 import java.io.FileReader;
 
+@Disabled
 @Autonomous(name="ReplayAuto", group="Testing")
 public class ReplayAuto extends com.qualcomm.robotcore.eventloop.opmode.LinearOpMode {
     // ======================= MOTORS =======================

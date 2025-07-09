@@ -91,6 +91,7 @@ import java.util.function.ToDoubleFunction;
  *   and the ip address the Limelight device assigned the Control Hub and which is displayed in small text
  *   below the name of the Limelight on the top level configuration screen.
  */
+ @Disabled
 @Autonomous(name = "Sensor: Limelight3A", group = "Sensor")
 public class SensorLimelight3A extends LinearOpMode {
 

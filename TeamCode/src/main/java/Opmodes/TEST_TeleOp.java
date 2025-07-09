@@ -30,6 +30,7 @@
 package Opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
@@ -52,6 +53,7 @@ import org.firstinspires.ftc.robotcore.external.hardware.camera.CameraName;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list
  */
 
+@Disabled
 @Autonomous(name="TEST_TeleOp", group="Robot")
 public class TEST_TeleOp extends LinearOpMode {
 
