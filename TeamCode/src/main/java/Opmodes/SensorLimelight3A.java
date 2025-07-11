@@ -72,7 +72,7 @@ import java.util.function.ToDoubleFunction;
  /*
  * This OpMode illustrates how to use the Limelight3A Vision Sensor.
  *
- * @see <a href="https://limelightvision.io/">Limelight</a>
+ * @see <a href="https:/ /limelightvision.io/">Limelight</a>
  *
  * Notes on configuration:
  *
@@ -91,7 +91,7 @@ import java.util.function.ToDoubleFunction;
  *   and the ip address the Limelight device assigned the Control Hub and which is displayed in small text
  *   below the name of the Limelight on the top level configuration screen.
  */
- @Disabled
+// @Disabled
 @Autonomous(name = "Sensor: Limelight3A", group = "Sensor")
 public class SensorLimelight3A extends LinearOpMode {
 
@@ -142,8 +142,8 @@ public class SensorLimelight3A extends LinearOpMode {
         robot.initialize(true);
 
         // Define and Initialize Motors/Sensors/Servos
-        limelight = hardwareMap.get(Limelight3A.class, "limelight");
-        Webcam1  = hardwareMap.get(CameraName.class, "Webcam 1");
+//        limelight = hardwareMap.get(Limelight3A.class, "limelight");
+//        Webcam1  = hardwareMap.get(CameraName.class, "Webcam 1");
         leftFront  = hardwareMap.get(DcMotor.class, "leftFront");
         rightBack = hardwareMap.get(DcMotor.class, "rightBack");
         rightFront = hardwareMap.get(DcMotor.class, "rightFront");
@@ -214,8 +214,8 @@ public class SensorLimelight3A extends LinearOpMode {
 
         waitForStart();
         robot.resetHeading();  // Reset heading to set a baseline for Auto
-//        limelight.start();
-//        limelight.pipelineSwitch(0);
+        limelight.start();
+        limelight.pipelineSwitch(0);
 
         while (opModeIsActive() && runonce == false) {
 

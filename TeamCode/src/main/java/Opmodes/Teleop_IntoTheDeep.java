@@ -137,8 +137,8 @@ public class Teleop_IntoTheDeep extends LinearOpMode {
         extensionMotor = hardwareMap.get(DcMotor.class, "extensionMotor");
 //        odometryX = hardwareMap.get(DcMotor.class, "odometryX");
 //        odometryY = hardwareMap.get(DcMotor.class, "odometryY");
-        distanceSensor = hardwareMap.get(DistanceSensor.class, "distanceSensor");
-        Webcam1  = hardwareMap.get(CameraName.class, "Webcam 1");
+//        distanceSensor = hardwareMap.get(DistanceSensor.class, "distanceSensor");
+//        Webcam1  = hardwareMap.get(CameraName.class, "Webcam 1");
 
         liftMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         extensionMotor.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
