@@ -145,9 +145,9 @@ public class SensorLimelight3A extends LinearOpMode {
 //        limelight = hardwareMap.get(Limelight3A.class, "limelight");
 //        Webcam1  = hardwareMap.get(CameraName.class, "Webcam 1");
         leftFront  = hardwareMap.get(DcMotor.class, "leftFront");
-        rightBack = hardwareMap.get(DcMotor.class, "rightBack");
+        rightBack = hardwareMap.get(DcMotor.class, "rightRear");
         rightFront = hardwareMap.get(DcMotor.class, "rightFront");
-        leftBack    = hardwareMap.get(DcMotor.class, "leftBack");
+        leftBack    = hardwareMap.get(DcMotor.class, "leftRear");
         liftMotor = hardwareMap.get(DcMotor.class, "liftMotor");
         extensionMotor = hardwareMap.get(DcMotor.class, "extensionMotor");
         ascentMotor1 = hardwareMap.get(DcMotor.class, "ascentMotor1");

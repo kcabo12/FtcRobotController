@@ -14,6 +14,7 @@ import com.qualcomm.hardware.lynx.LynxModule;
 import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.IMU;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.util.Range;
@@ -109,8 +110,8 @@ public class SimplifiedOdometryRobot {
         // !!!  Set the drive direction to ensure positive power drives each wheel forward.
         leftFrontDrive  = setupDriveMotor("leftFront", DcMotor.Direction.REVERSE);
         rightFrontDrive = setupDriveMotor("rightFront", DcMotor.Direction.FORWARD);
-        leftBackDrive = setupDriveMotor( "leftBack", DcMotor.Direction.REVERSE);
-        rightBackDrive = setupDriveMotor( "rightBack",DcMotor.Direction.FORWARD);
+        leftBackDrive = setupDriveMotor( "leftRear", DcMotor.Direction.REVERSE);
+        rightBackDrive = setupDriveMotor( "rightRear",DcMotor.Direction.FORWARD);
         imu = myOpMode.hardwareMap.get(IMU.class, "imu");
 
         //  Connect to the encoder channels using the name of that channel.
